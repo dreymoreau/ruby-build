@@ -20,3 +20,14 @@ def spin_words(string)
 end
 
 puts spin_words("Hey fellow warriors") # , "Hey wollef sroirraw")
+
+# refactor!!
+
+# just learned about map! through this!! so map! will actually modify the array in place rather than creating a new array from the original,, skipping the step of having to assign the result to a variable,, also ternary ! cleaner (( but! might not be production focused just solving codewars,, who knows!))
+def spin_words(string)
+  str = string.split(" ")
+  str.map! do |word|
+    word.length >= 5 ? word.reverse : word
+   end
+  return str.join(" ")
+end
